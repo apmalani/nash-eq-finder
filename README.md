@@ -6,3 +6,5 @@ I also made a website for it. This is not new --
 GTE (Game Theory Explorer) is also a website that accomplishes this but it requires Adobe Flash Player (which is dead).
 
 Nashpy (Python library) accomplishes this and more -- but I more so wanted to focus on the website implementation and the time constraint.
+
+tldr; I made a working website focused on finding the Nash Equilibrium for bimatrix, zero-sum games within polynomial time.

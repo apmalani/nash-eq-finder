@@ -24,3 +24,6 @@ def indifference(matrix, row_indices, column_indices):
         return False
     except np.linalg.LinAlgError as e:
         return False
+    
+def solve_nash_equilibrium(row, col):
+    pass

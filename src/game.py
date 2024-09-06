@@ -20,4 +20,4 @@ class Game:
         return np.array(payoffs)
     
     def solve(self):
-        pass
+        return equilibria.solve_nash_equilibrium(*self.matrices)

@@ -18,7 +18,7 @@ def indifference(matrix, row_indices, column_indices):
     target[-1] = 1
 
     try:
-        probability = np.linalg.lstsq(constraint, target, rcond = None)[0]
+        probability = np.linalg.solve(constraint, target)
         if np.all(probability >= 0):
             return probability
         return False

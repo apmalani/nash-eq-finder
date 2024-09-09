@@ -1,15 +1,15 @@
 import numpy as np
-import equilibria
+import src.equilibria
 
 class Game:
     def __init__(self, row, col = None):
         if col:
             if row.shape == col.shape:
-                self.matrices = tuple(row, col)
+                self.matrices = (row, col)
             else:
                 raise ValueError()
         else:
-            self.matrices = tuple(row, -row)
+            self.matrices = (row, -row)
 
     def payoffs(self, row_strat, col_strat):
         row_payoff = np.dot(row_strat, np.dot(self.matrices[0], col_strat))
@@ -20,4 +20,4 @@ class Game:
         return np.array(payoffs)
     
     def solve(self):
-        return equilibria.solve_nash_equilibrium(*self.matrices)
+        return src.equilibria.solve_nash_equilibrium(*self.matrices)

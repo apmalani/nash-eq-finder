@@ -60,3 +60,6 @@ class TestSolving(unittest.TestCase):
         sup = [0, 1], [0, 1]
         
         self.assertTrue(src.equilibria.define_nash_equilibirum(strat, sup, row, col))
+
+if __name__ == '__main__':
+    unittest.main()

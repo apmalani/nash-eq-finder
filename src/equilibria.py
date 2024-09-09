@@ -46,5 +46,14 @@ def generate_equilibrium(row, col):
         if support_obedience(row_strats, row_sup) and support_obedience(col_strats, col_sup):
                 yield row_strats, col_strats, row_sup, col_sup
 
+def define_nash_equilibirum(strat, sup, row, col):
+    row_payoffs = row @ strat[1]
+    col_payoffs = col.T @ strat[0]
+
+    row_sup_payoffs = row_payoffs[sup[0]]
+    col_sup_payoffs = col_payoffs[sup[1]]
+
+    return row_payoffs.max() == row_sup_payoffs.max() and col_payoffs.max() == col_sup_payoffs.max()
+
 def solve_nash_equilibrium(row, col):
     pass

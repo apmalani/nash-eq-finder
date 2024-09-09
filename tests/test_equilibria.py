@@ -45,3 +45,18 @@ class TestSolving(unittest.TestCase):
             result = result[:2]
             expected = expected[:2]
             self.assertTrue(np.array_equal(result, expected))
+
+    def test_equilibria_definition(self):
+        row = np.array([
+            [1, -1],
+            [-1, 1]
+        ])
+        col = np.array([
+            [-1, 1],
+            [1, -1]
+        ])
+
+        strat = np.array([1, 0]), np.array([1, 0])
+        sup = [0, 1], [0, 1]
+        
+        self.assertTrue(src.equilibria.define_nash_equilibirum(strat, sup, row, col))

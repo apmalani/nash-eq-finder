@@ -39,4 +39,9 @@ class TestSolving(unittest.TestCase):
             [1, -1]
         ])
 
-        print(list(src.equilibria.generate_equilibrium(row, col)))
+        expected_array = [(np.array([1., 0.]), np.array([1., 0.]), (0,), (0,)), (np.array([1., 0.]), np.array([0., 1.]), (0,), (1,)), (np.array([0., 1.]), np.array([1., 0.]), (1,), (0,)), (np.array([0., 1.]), np.array([0., 1.]), (1,), (1,)), (np.array([0.5, 0.5]), np.array([0.5, 0.5]), (0, 1), (0, 1))]
+
+        for result, expected in zip(src.equilibria.generate_equilibrium(row, col), expected_array):
+            result = result[:2]
+            expected = expected[:2]
+            self.assertTrue(np.array_equal(result, expected))

@@ -21,7 +21,17 @@ class TestGame(unittest.TestCase):
             self.assertTrue(np.array_equal(result, expected))
 
     def test_payoffs(self):
-        pass
+        row = np.array([
+            [1, -1],
+            [-1, 1]
+        ])
+
+        game = src.game.Game(row)
+
+        row_strat = np.array([0, 1])
+        col_strat = np.array([1, 0])
+
+        self.assertTrue(np.array_equal(game.payoffs(row_strat, col_strat), np.array([-1, 1])))
 
 if __name__ == '__main__':
     unittest.main()

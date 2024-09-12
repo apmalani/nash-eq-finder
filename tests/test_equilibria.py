@@ -61,5 +61,20 @@ class TestSolving(unittest.TestCase):
         
         self.assertTrue(src.equilibria.define_nash_equilibirum(strat, sup, row, col))
 
+    def test_game_solving(self):
+        row = np.array([
+            [-8, 0],
+            [-10, -1]
+        ])
+        col = np.array([
+            [-8, -10],
+            [0, -1]
+        ])
+
+        expected_array = [(np.array([1., 0.]), np.array([1., 0.]))]
+
+        for result, expected in zip(list(src.equilibria.solve_nash_equilibrium(row, col)), expected_array):
+            self.assertTrue(np.array_equal(result, expected))
+
 if __name__ == '__main__':
     unittest.main()

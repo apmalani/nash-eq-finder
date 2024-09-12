@@ -50,8 +50,8 @@ def define_nash_equilibirum(strat, sup, row, col):
     row_payoffs = row @ strat[1]
     col_payoffs = col.T @ strat[0]
 
-    row_sup_payoffs = row_payoffs[sup[0]]
-    col_sup_payoffs = col_payoffs[sup[1]]
+    row_sup_payoffs = row_payoffs[np.array(sup[0])]
+    col_sup_payoffs = col_payoffs[np.array(sup[1])]
 
     return row_payoffs.max() == row_sup_payoffs.max() and col_payoffs.max() == col_sup_payoffs.max()
 

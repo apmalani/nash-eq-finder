@@ -56,4 +56,8 @@ def define_nash_equilibirum(strat, sup, row, col):
     return row_payoffs.max() == row_sup_payoffs.max() and col_payoffs.max() == col_sup_payoffs.max()
 
 def solve_nash_equilibrium(row, col):
-    pass
+    for row_strat, col_strat, row_sup, col_sup in generate_equilibrium(row, col):
+         strats = (row_strat, col_strat)
+         sups = (row_sup, col_sup)
+         if define_nash_equilibirum(strats, sups, row, col):
+              yield strats

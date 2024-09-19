@@ -7,4 +7,4 @@ GTE (Game Theory Explorer) is also a website that accomplishes this but it requi
 
 Gambit (C library) accomplishes this and more -- but I more so wanted to focus on the website implementation and the time constraint.
 
-tldr; I made a working website focused on finding the Nash Equilibrium for bimatrix, zero-sum games within polynomial time.
+tldr; scripts for finding the Nash Equilibrium for bimatrix, zero-sum games within polynomial time.
